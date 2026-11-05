@@ -1,6 +1,6 @@
 # obsidian-boaz-setting
 
-새로 만든 Obsidian 계정/볼트에서 **명령 한 줄**로 기준 환경(플러그인 10개 · 테마 3종 · 단축키 · 스니펫 · 각종 설정)을 그대로 적용하는 패키지입니다.
+새로 만든 Obsidian 계정/볼트에서 **명령 한 줄**로 기준 환경(플러그인 11개 · 테마 3종 · 단축키 · 스니펫 · 각종 설정)을 그대로 적용하는 패키지입니다.
 
 플러그인 본체(`main.js`)까지 함께 담겨 있어 **인터넷 연결이나 커뮤니티 플러그인 스토어 없이도** 동일한 버전이 설치됩니다.
 
@@ -45,7 +45,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 -Vault C:\MyVault
 
 ## 무엇이 설치되나
 
-### 커뮤니티 플러그인 (10개)
+### 커뮤니티 플러그인 (11개)
 
 | 플러그인 | ID | 버전 |
 |---|---|---|
@@ -59,8 +59,17 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 -Vault C:\MyVault
 | Tracker | `obsidian-tracker` | 1.19.0 |
 | Contribution Graph | `contribution-graph` | 0.10.0 |
 | Go to Line | `obsidian-go-to-line` | 0.0.2 |
+| Bases Chart Views | `bases-chart-views` | 1.3.1 |
 
 플러그인별 설정값(`data.json`)도 함께 복사되므로, 상태 기호·전역 필터·주기 노트 폴더 같은 세부 설정까지 동일해집니다.
+
+**Bases Chart Views** 는 코어 플러그인 Bases 에 차트 뷰를 추가하며 **Obsidian 1.14.5 이상**이 필요합니다. [공식 1.3.1 릴리스](https://github.com/haiqiang-zhang/obsidian-bases-charts/releases/tag/1.3.1)의 파일을 수정 없이 담았고, 소스와 라이선스(GPL-3.0)는 [원본 저장소](https://github.com/haiqiang-zhang/obsidian-bases-charts)에 있습니다.
+
+| 파일 | SHA-256 |
+|---|---|
+| `main.js` | `bbf632c3bc3acca55d6b88bef98fa78fc6a29e8343e17d6fc901666f1c53202e` |
+| `manifest.json` | `4c3b8320df7a8758b6490353778a3c31d2874d811a58a5656aae520f6cae9a4c` |
+| `styles.css` | `1e6b28d0b1e842a6d470cb0b5435d632ac2005d03a2dc216262df5e46452c29c` |
 
 ### 테마 (3종)
 
@@ -96,7 +105,7 @@ obsidian-boaz-setting/
 ├── install.ps1         # Windows
 ├── config/             # → 볼트의 .obsidian/ 로 복사됨
 │   ├── *.json          # 설정 11개
-│   ├── plugins/        # 플러그인 10개 (본체 + data.json)
+│   ├── plugins/        # 플러그인 11개 (본체 + data.json)
 │   ├── themes/         # 테마 3종
 │   └── snippets/       # CSS 스니펫 2개
 └── vault-seed/         # → 볼트 루트로 복사 (없을 때만)
@@ -135,6 +144,9 @@ mv ~/MyVault/.obsidian.backup.20260811-101500 ~/MyVault/.obsidian
 
 ## 문제 해결
 
+**Bases Chart Views 만 안 보여요**
+Obsidian 1.14.5 미만이면 이 플러그인을 불러올 수 없습니다. Obsidian 을 업데이트하세요.
+
 **플러그인이 하나도 안 보여요**
 설정 → 커뮤니티 플러그인 → **제한 모드(Restricted mode)** 를 끄고 Obsidian 을 재시작하세요.
 
@@ -149,4 +161,4 @@ Obsidian 이 켜진 상태로 설치하면 종료 시 기존 설정을 다시 �
 
 ---
 
-기준 환경: Obsidian 1.13.x (macOS). 플러그인·테마는 각 제작자의 라이선스를 따르며, 동일 환경 재현을 위해 그대로 포함했습니다.
+기준 환경: Obsidian 1.13.x (macOS). 단, Bases Chart Views 는 1.14.5 이상이 필요합니다. 플러그인·테마는 각 제작자의 라이선스를 따르며, 동일 환경 재현을 위해 그대로 포함했습니다.
